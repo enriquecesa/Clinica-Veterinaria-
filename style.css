@@ -1,0 +1,511 @@
+/* Variables CSS Personalizadas */
+:root {
+    --primary-color: #2C3E50; /* Azul Oscuro */
+    --secondary-color: #18BC9C; /* Turquesa */
+    --accent-color: #F39C12; /* Naranja */
+    --text-color: #34495E; /* Gris oscuro para texto */
+    --light-bg: #f8f9fa; /* Fondo claro */
+    --white: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--white);
+    scroll-behavior: smooth; /* Scroll suave */
+    padding-top: 56px; /* Ajuste para navbar fija */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+/* Navbar Personalizada */
+.navbar {
+    background-color: var(--primary-color) !important;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--white) !important;
+}
+
+.navbar-nav .nav-link {
+    color: var(--white) !important;
+    font-weight: 500;
+    margin-left: 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--secondary-color) !important;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee') no-repeat center center/cover;
+    height: 100vh;
+    padding: 100px 0;
+    color: var(--white);
+    position: relative;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.hero-section .btn-accent {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: var(--white);
+    padding: 15px 30px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.hero-section .btn-accent:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* General Section Styling */
+section {
+    padding: 80px 0;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--light-bg);
+}
+
+section h2 {
+    color: var(--primary-color);
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+}
+
+/* Cards Generales */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+/* Services Section */
+.service-card .card-body i {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.service-card .card-title {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+/* Team Section */
+.team-card {
+    background-color: var(--white);
+}
+
+.team-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid var(--secondary-color);
+    box-shadow: 0 0 0 5px rgba(24, 188, 156, 0.3);
+}
+
+.team-card .card-title {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-top: 15px;
+}
+
+.team-card .text-muted {
+    font-size: 1.1rem;
+    color: var(--accent-color) !important;
+}
+
+/* Testimonials Section */
+.testimonial-card {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Para el borde animado */
+    box-shadow: 0 6px 12px var(--shadow);
+}
+
+.testimonial-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid transparent; /* Border inicial transparente */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Animación de latido del corazón para imágenes de clientes */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); border-color: var(--accent-color); }
+    100% { transform: scale(1); }
+}
+
+.heartbeat-animation:hover {
+    animation: heartbeat 1s infinite;
+}
+
+/* Borde arcoíris para las cards de testimonios */
+.rainbow-border {
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté sobre el borde */
+}
+
+.rainbow-border::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 18px; /* Ajusta al radio de la tarjeta + padding */
+    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+    background-size: 400% 400%;
+    z-index: -1; /* Envía el fondo detrás del contenido */
+    animation: rainbow-border-animation 6s ease infinite;
+    opacity: 0.8;
+    filter: blur(2px); /* Un pequeño blur para un efecto más suave */
+}
+
+@keyframes rainbow-border-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Carousel controls outside card group */
+#carouselExampleControls .carousel-control-prev,
+#carouselExampleControls .carousel-control-next {
+    width: 5%; /* Ajusta el ancho para que los botones estén más afuera */
+    opacity: 1; /* Asegura que sean visibles */
+}
+
+#carouselExampleControls .carousel-control-prev-icon,
+#carouselExampleControls .carousel-control-next-icon {
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    padding: 15px;
+    background-size: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+#carouselExampleControls .carousel-control-prev-icon:hover,
+#carouselExampleControls .carousel-control-next-icon:hover {
+    background-color: var(--accent-color);
+}
+
+
+/* Contact Section */
+.contact-card, .contact-form-card {
+    border-radius: 15px;
+    box-shadow: 0 6px 12px var(--shadow);
+    background-color: var(--white);
+    padding: 30px;
+}
+
+.contact-card i {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.contact-card .display-5 {
+    color: var(--primary-color);
+}
+
+.whatsapp-button {
+    background-color: #25D366;
+    border-color: #25D366;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #1DA851;
+    border-color: #1DA851;
+    transform: scale(1.02);
+}
+
+.contact-form-card label {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.contact-form-card .form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.25rem rgba(24, 188, 156, 0.25);
+}
+
+/* Contact Card Hover Animation */
+.contact-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color) !important;
+    color: var(--white);
+    padding: 30px 0;
+}
+
+footer .social-icons a {
+    color: var(--white);
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+footer p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+/* Modal Styling */
+.modal-header.bg-success {
+    background-color: var(--secondary-color) !important;
+}
+
+.modal-title {
+    color: var(--white);
+}
+
+.modal-body .fa-check-circle {
+    color: var(--secondary-color);
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounceIn {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        -webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+        transition-timing-function: cubic-bezier(0.215, .61, .355, 1)
+    }
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3)
+    }
+    20% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1)
+    }
+    40% {
+        -webkit-transform: scale3d(.9, .9, .9);
+        transform: scale3d(.9, .9, .9)
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03)
+    }
+    80% {
+        -webkit-transform: scale3d(.97, .97, .97);
+        transform: scale3d(.97, .97, .97)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1)
+    }
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 992px) {
+    .navbar-nav .nav-link {
+        margin-left: 0;
+        text-align: center;
+    }
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+    .hero-section .btn-accent {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+    .carousel-item .row-cols-md-4 > * {
+        flex: 0 0 50%; /* 2 cards por vista en pantallas medianas */
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 0; /* Bootstrap 5 navbar handles padding on smaller screens */
+    }
+    .hero-section {
+        height: auto;
+        min-height: 80vh;
+        padding-top: 100px; /* Ajuste para el contenido no se solape con navbar */
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+    .hero-section .btn-accent {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    section {
+        padding: 60px 0;
+    }
+    section h2 {
+        font-size: 1.8rem;
+    }
+    .card-img-top {
+        height: 180px;
+    }
+    .team-photo {
+        width: 120px;
+        height: 120px;
+    }
+    .carousel-item .row-cols-md-4 > * {
+        flex: 0 0 100%; /* 1 card por vista en pantallas pequeñas */
+        max-width: 100%;
+    }
+     #carouselExampleControls .carousel-control-prev,
+    #carouselExampleControls .carousel-control-next {
+        width: 10%; /* Ajusta el ancho para que los botones estén más afuera */
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+    .hero-section .btn-accent {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+    section h2 {
+        font-size: 1.5rem;
+    }
+    .contact-card .display-5 {
+        font-size: 2.5rem;
+    }
+    footer .social-icons a {
+        font-size: 1.5rem;
+    }
+}
